@@ -1,2 +1,3 @@
-When Users Managment System is ready, 
-Run command "npm run e2e:test"
+1. npm i
+2. Run Users Managment System 
+3. Run command "npm run e2e:test" in e2e project
