@@ -32,4 +32,24 @@ describe("Add users form", () => {
          .should("have.text", description);
       });
   });
+
+  it("Checks submission response status 201", () => {
+      cy.request({
+          method: 'post',
+          url: 'http://localhost:3001/api/v1/users/',
+          headers: {
+            accept: "application/json",          
+           },
+           body:{
+            firstName: `${firstName}_`,
+            lastName: `${lastName}_`,
+            email: `1${email}`,
+            description: `${description}_`,
+            password: "password"
+            
+           }
+      }).then((response) => {
+          expect(response.status).to.eq(201);   
+      })
+  })
 });
